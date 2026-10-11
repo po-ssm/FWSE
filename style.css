@@ -102,7 +102,7 @@ nav.haupt a[aria-current="page"] { background: var(--blau-hell); color: #fff; }
 .kopfbild {
   height: 224px;
   background: var(--blau) center / cover no-repeat;
-  background-image: url("header.jpg");
+
 }
 @media (max-width: 600px) { .kopfbild { height: 120px; } }
 
