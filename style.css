@@ -100,7 +100,7 @@ nav.haupt a[aria-current="page"] { background: var(--blau-hell); color: #fff; }
 
 /* Kopfbild über die volle Breite */
 .kopfbild {
-  height: 124px;
+  height: 70px;
   background: var(--blau) center / cover no-repeat;
 
 }
