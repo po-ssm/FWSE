@@ -1,0 +1,239 @@
+/* Verein zur Förderung der Waldorfpädagogik Elmshorn e.V.
+   Gestaltung angelehnt an die Website der Freien Waldorfschule Elmshorn.
+   Bewusst ohne externe Schriften, Skripte oder Tracker – keine Cookies.
+   Roboto wird nur genutzt, wenn sie auf dem Gerät installiert ist. */
+
+:root {
+  --blau: #1883a3;
+  --blau-hell: #1fa7cf;
+  --orange: #dd6a1c;
+  --text: #666666;
+  --text-dunkel: #333333;
+  --grau-hell: #f5f5f5;
+  --grau-fuss: #eeeeee;
+  --linie: #e6e6e6;
+  --maxbreite: 1170px;
+  --schrift: Roboto, "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--text);
+  font-family: var(--schrift);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+a { color: var(--blau); }
+a:hover, a:focus { color: var(--orange); }
+
+.wrap {
+  max-width: var(--maxbreite);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Blaue Kontaktleiste oben */
+.kontaktleiste {
+  background: var(--blau);
+  color: #fff;
+  font-size: 12px;
+}
+.kontaktleiste .wrap {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 6px;
+}
+.kontaktleiste .trenner { opacity: 0.7; }
+.kontaktleiste a { color: #fff; text-decoration: none; }
+.kontaktleiste a:hover { text-decoration: underline; }
+
+/* Kopf mit Logo und Navigation */
+header.kopf { background: #fff; }
+header.kopf .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.logo { display: block; text-decoration: none; line-height: 0; }
+.logo img { display: block; width: 233px; max-width: 60vw; height: auto; }
+.logo-text {
+  display: none;
+  line-height: 1.2;
+  color: var(--blau);
+  font-size: 20px;
+}
+.logo-text small { display: block; color: var(--orange); font-size: 16px; }
+.logo.ohne-bild img { display: none; }
+.logo.ohne-bild .logo-text { display: block; }
+
+nav.haupt ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+nav.haupt a {
+  display: block;
+  padding: 6px 10px;
+  color: var(--blau);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+nav.haupt a:hover { background: var(--grau-hell); color: var(--blau); }
+nav.haupt a[aria-current="page"] { background: var(--blau-hell); color: #fff; }
+
+/* Kopfbild über die volle Breite */
+.kopfbild {
+  height: 224px;
+  background: var(--blau) center / cover no-repeat;
+  background-image: url("header.jpg");
+}
+@media (max-width: 600px) { .kopfbild { height: 120px; } }
+
+/* Brotkrumen */
+.brotkrumen {
+  background: var(--grau-hell);
+  margin: 0 0 24px;
+  padding: 14px 16px;
+  font-size: 13px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.brotkrumen li + li::before { content: "/"; padding: 0 6px; color: #ccc; }
+.brotkrumen a { color: var(--orange); text-decoration: none; }
+.brotkrumen [aria-current] { color: var(--text); }
+
+/* Zweispaltiger Inhalt: Seitenmenü + Text */
+.spalten-inhalt {
+  display: grid;
+  gap: 24px;
+  padding-bottom: 40px;
+}
+@media (min-width: 900px) {
+  .spalten-inhalt { grid-template-columns: 240px 1fr; gap: 30px; }
+}
+
+nav.seitenmenue ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--linie);
+}
+nav.seitenmenue li { border-bottom: 1px solid var(--linie); }
+nav.seitenmenue a {
+  display: block;
+  padding: 9px 4px;
+  color: var(--orange);
+  text-transform: uppercase;
+  font-size: 13px;
+  text-decoration: none;
+}
+nav.seitenmenue a:hover { color: var(--blau); }
+nav.seitenmenue a[aria-current="page"] { color: var(--blau); font-weight: 700; }
+
+h1 {
+  font-family: var(--schrift);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.2;
+  color: var(--blau);
+  margin: 0 0 22px;
+}
+h2 {
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--orange);
+  margin: 28px 0 10px;
+}
+h2:first-of-type { margin-top: 0; }
+h3 { font-size: 15px; color: var(--text-dunkel); margin: 20px 0 6px; }
+
+.text-mit-bild { display: grid; gap: 20px; }
+@media (min-width: 760px) {
+  .text-mit-bild { grid-template-columns: 1fr 340px; gap: 28px; }
+}
+.text-mit-bild figure { margin: 0; }
+.text-mit-bild img {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 4px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+}
+
+blockquote.motto {
+  margin: 18px 0 0;
+  padding: 0;
+  color: var(--text-dunkel);
+  font-weight: 700;
+  line-height: 1.6;
+}
+blockquote.motto footer {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text);
+  margin-top: 4px;
+}
+
+ul.vorstand { list-style: none; margin: 0; padding: 0; }
+ul.vorstand li { padding: 1px 0; }
+address { font-style: normal; }
+
+/* Grauer Bereich vor dem Fuß */
+.vor-fuss {
+  background: var(--grau-fuss);
+  color: var(--text-dunkel);
+  font-size: 14px;
+}
+.vor-fuss .wrap {
+  display: grid;
+  gap: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+@media (min-width: 700px) {
+  .vor-fuss .wrap { grid-template-columns: 1fr 1fr 1fr; }
+}
+.vor-fuss h4 { margin: 0 0 8px; font-size: 15px; color: var(--blau); font-weight: 400; }
+.vor-fuss ul { list-style: none; margin: 0; padding: 0; }
+.vor-fuss li { padding: 1px 0; }
+.vor-fuss a { color: var(--text-dunkel); text-decoration: none; }
+.vor-fuss a:hover { color: var(--orange); text-decoration: underline; }
+
+/* Blauer Fuß */
+footer.fuss {
+  background: var(--blau);
+  color: #fff;
+  font-size: 13px;
+}
+footer.fuss .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px 20px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+footer.fuss ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 16px; }
+footer.fuss a { color: #fff; text-decoration: none; }
+footer.fuss a:hover { text-decoration: underline; }
